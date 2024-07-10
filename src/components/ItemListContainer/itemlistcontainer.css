@@ -1,0 +1,13 @@
+.saludo {
+    display: flex;
+    justify-content: center;
+    border: #9C4A8C solid 5px;
+    border-radius: 8px;
+    margin: 2rem;
+    padding: 3rem;
+}
+
+.saludo h2 {
+    color: #661D58;
+    font-size: 3rem;
+}
