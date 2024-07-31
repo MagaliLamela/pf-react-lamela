@@ -69,3 +69,36 @@
     transform: translate(28px, 1px);
   }
   
+  /* RESPONSIVE */
+  /*HEADER*/
+
+@media (min-width: 992px) {
+  .nav-item {
+    text-decoration: underline;
+    text-decoration-color: #661D58;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+    transition: all 0.3s;
+  }
+  .nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: #fafafa;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .menuNavegacion ul li .dropdown-menu {
+    background-color: #661D58;
+  }
+  .menuNavegacion ul li .dropdown-item {
+    color: #fafafa;
+  }
+  .dropdown-divider {
+    display: none;
+  }
+  .logo {
+    width: 8.5vh;
+  }
+}

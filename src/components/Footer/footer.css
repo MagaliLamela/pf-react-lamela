@@ -1,0 +1,151 @@
+footer {
+    width: 100%;
+  }
+  
+  .footer1 {
+    width: 100%;
+    background-color: #661D58;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+    color: #fafafa;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .footer1 div {
+    display: inline-block;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .footer1 div h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fafafa;
+    text-wrap: nowrap;
+  }
+  .footer1 div p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-wrap: nowrap;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  .footer1 div a {
+    text-decoration: none;
+  }
+  .footer1 div a img {
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 6px;
+    margin-left: 4px;
+  }
+  .footer1 div img {
+    background-color: white;
+    margin: 1px;
+    border-radius: 5px;
+    margin-top: 7px;
+  }
+  
+  #logoVisa {
+    padding: 8px;
+    width: 3rem;
+    height: 2rem;
+  }
+  
+  #logoVisaDebito {
+    width: 3rem;
+    height: 2rem;
+  }
+  
+  #logoMaster {
+    padding: 4px;
+    width: 3rem;
+    height: 2rem;
+  }
+  
+  #logoAmex {
+    width: 3rem;
+    height: 2rem;
+  }
+  
+  #logoMp {
+    padding: 4px;
+    width: 3rem;
+    height: 2rem;
+  }
+  
+  .footer2 {
+    background-color: #9C4A8C;
+    font-size: 0.9rem;
+    color: #fafafa;
+  }
+  .footer2 p {
+    padding: 10px;
+  }
+  .footer2 p a {
+    text-decoration: none;
+    color: #fafafa;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  
+  /* RESPONSIVE */
+
+  @media (max-width: 992px) {
+    .localBelgrano {
+      grid-area: local1;
+    }
+    .localPalermo {
+      grid-area: local2;
+    }
+    .localRecoleta {
+      grid-area: local3;
+    }
+    .redes {
+      grid-area: redes;
+    }
+    .mediosDePago {
+      grid-area: mediosDePago;
+    }
+    .footer1 {
+      display: grid;
+      grid-template-areas: "none local1 .. redes" "none local2 .. mediosDePago" "none local3 .. mediosDePago";
+    }
+  }
+  @media (max-width: 500px) {
+    .localBelgrano {
+      grid-area: local1;
+    }
+    .localPalermo {
+      grid-area: local2;
+    }
+    .localRecoleta {
+      grid-area: local3;
+    }
+    .redes {
+      grid-area: redes;
+    }
+    .mediosDePago {
+      grid-area: mediosDePago;
+    }
+    .footer1 {
+      display: grid;
+      grid-template-areas: "local1 . redes" "local2 . mediosDePago" "local3 . none";
+    }
+  }
+  @media (max-width: 450px) {
+    .footer1 {
+      display: flex;
+      flex-direction: column;
+    }
+  }

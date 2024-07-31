@@ -21,9 +21,6 @@
 .contenedorImagenTitulo div h1 {
     font-size: 2rem;
     text-align: start;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 30px 0px;
     margin-bottom: 10px;
     color: black;
 }
