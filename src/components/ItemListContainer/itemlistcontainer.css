@@ -1,13 +1,80 @@
-.saludo {
+.cardsProductos {
     display: flex;
-    justify-content: center;
-    border: #9C4A8C solid 5px;
-    border-radius: 8px;
-    margin: 2rem;
-    padding: 3rem;
-}
-
-.saludo h2 {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 500px
+  }
+  
+  .cardIndividual {
+    border: none;
+    margin-bottom: 20px;
+    display: flex;
+    margin-top: 20px;
+    align-self: normal;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fafafa;
+    transition: all 0.3s;
+  }
+  .cardsProductos .cardIndividual:hover {
+    background-color: white;
+  }
+  .cardsProductos .cardIndividual .nombreProducto {
+    text-wrap: balance;
+    text-align: center;
+    height: 4rem;
+  }
+  .cardsProductos .cardIndividual img {
+    max-height: 30rem;
+    max-width: 30rem;
+    transition: all 0.3s;
+  }
+  .cardsProductos .cardIndividual img:hover {
+    transform: scale(0.9, 0.9);
+  }
+  .cardsProductos .cardIndividual h2 {
+    color: black;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .cardsProductos .cardIndividual h3 {
     color: #661D58;
-    font-size: 3rem;
-}
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 13px;
+    margin-top: auto;
+  }
+  .cardsProductos .cardIndividual h3 span {
+    font-weight: normal;
+    text-decoration: line-through;
+    opacity: 75%;
+    font-size: 1.6rem;
+  }
+  .cardsProductos .cardIndividual .btnProductos {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-top: auto;
+    background-color: #661D58;
+    color: #fafafa;
+    padding: 10px;
+    border: #661D58 solid 1px;
+    transition: all 0.3s;
+    border-radius: 15px;
+  }
+  .cardsProductos .cardIndividual .btnProductos:hover {
+    background-color: #9C4A8C;
+    color: #fafafa;
+    border: none;
+  }
+  
+  
+.anclaProductos {
+    text-decoration: none;
+  }
