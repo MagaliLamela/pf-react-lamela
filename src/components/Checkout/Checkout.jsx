@@ -1,9 +1,12 @@
 import { useState, useContext } from "react";
+
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 import { CartContext } from "../../context/CartContext";
+
 import FormularioCheckout from "./FormularioCheckout";
+
 import db from "../../db/db.js";
 import validateForm from "../../utils/validacionFormulario.js";
 
@@ -18,7 +21,7 @@ const Checkout = () => {
     const [idOrden, setIdOrden] = useState(null);
     const [error, setError] = useState(null);
 
-    const { carrito, precioTotal } = useContext(CartContext);
+    const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext);
 
     const handleChangeInput = (event) => {
         setDatosForm({ ...datosForm, [event.target.name]: event.target.value });
@@ -40,6 +43,7 @@ const Checkout = () => {
 
         if (response.status === "success") {
             sendOrder(orden);
+            vaciarCarrito();
         } else {
             if (error !== response.message) {
                 setError(response.message);
@@ -66,8 +70,8 @@ const Checkout = () => {
     return (
         <div>
             {idOrden ? (
-                <div>
-                    <h2>Orden completada correctamente!</h2>
+                <div className="contenedorOrdenCompleta">
+                    <h2>¡Orden completada correctamente!</h2>
                     <p>Guarde el id de su orden generada: {idOrden}</p>
                 </div>
             ) : (

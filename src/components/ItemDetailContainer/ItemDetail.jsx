@@ -33,10 +33,10 @@ const ItemDetail = ({ producto }) => {
                     <h1>{producto.nombre}</h1>
                     <h2>
                         {producto.precioAnterior && (
-                            <span>${producto.precioAnterior}</span>
+                            <span>${producto.precioAnterior.toLocaleString()}</span>
                         )}
                         {producto.precioAnterior && ' | '}
-                        $ {producto.precio}
+                        $ {producto.precio.toLocaleString()}
                     </h2>
                     {
                         mostrarItemCount ? (
