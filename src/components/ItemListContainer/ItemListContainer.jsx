@@ -1,44 +1,58 @@
-import "./itemlistcontainer.css"
 import { useState, useEffect } from "react"
-import obtenerProductos from "../../data/data.js"
-import ItemList from "./ItemList"
+
 import { useParams } from "react-router-dom"
+
+import { getDocs, collection, query, where } from "firebase/firestore"
+
+import ItemList from "./ItemList"
+
+import db from "../../db/db.js"
+
+import "./itemlistcontainer.css"
 
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
-  const [titulo, setTitulo] = useState("Promociones del Mes")
+  const [titulo, setTitulo] = useState("")
 
-  const { idCategoria } = useParams() //Tiene que tener el mismo nombre que puse en el parametro dinamico en app.jsx
+  const { idCategoria } = useParams()
+
+  const getProducts = async () => {
+    try {
+      const productosRef = collection(db, "productos");
+
+      let q;
+      if (idCategoria) {
+        // Filtrar productos por categoría específica
+        q = query(productosRef, where("categorias", "array-contains", idCategoria));
+        setTitulo(`Productos de ${idCategoria}`);
+      } else {
+        // Filtrar productos promocionales
+        q = query(productosRef, where("categorias", "array-contains", "promociones"));
+        setTitulo("Promociones del Mes");
+      }
+
+      const dataDb = await getDocs(q);
+
+      const data = dataDb.docs.map((productDb) => {
+        return { id: productDb.id, ...productDb.data() }
+      });
+
+      setProductos(data);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    obtenerProductos()
-      .then((dataProductos) => {
-        let productosFiltrados;
-
-        if (idCategoria) {
-          //Filtrar los productos por esa categoria recibida
-          productosFiltrados = dataProductos.filter((producto) => producto.categorias.includes(idCategoria));
-          setTitulo(`Productos de ${idCategoria}`);
-        } else {
-          productosFiltrados = dataProductos.filter((producto) =>
-            producto.categorias.includes("promociones")
-          );
-          setTitulo("Promociones del Mes");
-        }
-
-        setProductos(productosFiltrados)
-
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }, [idCategoria])
+    getProducts();
+  }, [idCategoria]);
 
   return (
     <div>
-    <h1> {titulo} </h1>
-    <ItemList productos={productos} />
+      <h1> {titulo} </h1>
+      <ItemList productos={productos} />
     </div>
   )
 }

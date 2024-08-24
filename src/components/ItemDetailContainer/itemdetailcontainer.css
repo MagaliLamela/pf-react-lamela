@@ -40,22 +40,6 @@
     opacity: 75%;
 }
 
-.contenedorImagenTitulo div button {
-    background-color: #661D58;
-    color: #fafafa;
-    padding: 10px;
-    border: #661D58 solid 1px;
-    transition: all 0.3s;
-    font-size: 1.3rem;
-    border-radius: 10px;
-}
-
-.contenedorImagenTitulo div button:hover {
-    background-color: #9C4A8C;
-    color: #fafafa;
-    border: none;
-}
-
 .contenedorImagenTitulo div p {
     font-size: 1rem;
     line-height: 2.2;
@@ -74,4 +58,43 @@
     opacity: 75%;
     text-align: justify;
     line-height: 1.7;
+}
+
+.btnIrAlCarrito {
+    width: 250px;
+    height: 50px;
+    background-color: #661D58;
+    border-radius: 8px;
+    border: none;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+.btnIrAlCarrito a {
+    text-decoration: none;
+    color: #fafafa;
+    font-size: 1.3rem;
+}
+
+.btnIrAlCarrito:hover {
+    background-color: #9C4A8C;
+}
+
+.productoNoEncontrado h2 {
+    margin-top: 100px;
+    margin-left: 200px;
+    font-size: 1.8rem;
+}
+
+.productoNoEncontrado a button {
+    background-color: #661D58;
+    color: #fafafa;
+    padding: 10px;
+    border: none;
+    transition: all 0.3s;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    margin-left: 200px;
+    margin-bottom: 200px;
+    margin-top: 30px;
 }

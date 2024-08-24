@@ -1,8 +1,12 @@
+import { addDoc, collection } from "firebase/firestore"
+import db from "../db/db.js"
+
 const productos = [
     {
         id: "royal-canin-mini-puppy-3kg",
         nombre: "Royal Canin Mini Puppy 3 Kg",
         imagen: "/img/promo3.png",
+        stock: 2,
         precioAnterior: 11250,
         precio: 10125,
         categorias: [
@@ -15,6 +19,7 @@ const productos = [
         id: "royal-canin-mother-and-babycat-1-5kg",
         nombre: "Royal Canin Mother & Babycat 1,5 Kg",
         imagen: "/img/rcmotherandbabycat.png",
+        stock: 4,
         precio: 9100,
         categorias: [
             "gatos"
@@ -25,6 +30,7 @@ const productos = [
         id: "royal-canin-kitten-1-5kg",
         nombre: "Royal Canin Kitten 1,5 Kg",
         imagen: "/img/rckitten.png",
+        stock: 5,
         precio: 9100,
         categorias: [
             "gatos"
@@ -35,6 +41,7 @@ const productos = [
         id: "royal-canin-gato-indoor-1-5kg",
         nombre: "Royal Canin Gato Indoor 1,5 Kg",
         imagen: "/img/promo4.png",
+        stock: 10,
         precioAnterior: 8100,
         precio: 7290,
         categorias: [
@@ -47,6 +54,7 @@ const productos = [
         id: "royal-canin-mini-adult-3kg",
         nombre: "Royal Canin Mini Adult 3 Kg",
         imagen: "/img/promo1.png",
+        stock: 8,
         precioAnterior: 10300,
         precio: 9270,
         categorias: [
@@ -59,6 +67,7 @@ const productos = [
         id: "royal-canin-gato-fit-1-5kg",
         nombre: "Royal Canin Gato Fit 1,5 Kg",
         imagen: "/img/promo2.png",
+        stock: 3,
         precioAnterior: 8100,
         precio: 7290,
         categorias: [
@@ -71,6 +80,7 @@ const productos = [
         id: "royal-canin-medium-puppy-3kg",
         nombre: "Royal Canin Medium Puppy 3 Kg",
         imagen: "/img/rcperromediumpuppy.png",
+        stock: 9,
         precio: 10999,
         categorias: [
             "perros"
@@ -81,6 +91,7 @@ const productos = [
         id: "royal-canin-medium-adult-3kg",
         nombre: "Royal Canin Medium Adult 3 Kg",
         imagen: "/img/rcperromediumadult.png",
+        stock: 7,
         precio: 9850,
         categorias: [
             "perros"
@@ -91,6 +102,7 @@ const productos = [
         id: "royal-canin-maxi-puppy-3kg",
         nombre: "Royal Canin Maxi Puppy 3 Kg",
         imagen: "/img/rcperromaxipuppy.png",
+        stock: 6,
         precio: 10999,
         categorias: [
             "perros"
@@ -101,6 +113,7 @@ const productos = [
         id: "royal-canin-maxi-adult-3kg",
         nombre: "Royal Canin Maxi Adult 3 Kg",
         imagen: "/img/rcperromaxiadult.png",
+        stock: 12,
         precio: 9799,
         categorias: [
             "perros"
@@ -111,6 +124,7 @@ const productos = [
         id: "proplan-perro-mini-puppy-3kg",
         nombre: "Pro Plan Cachorro Raza Pequeña 3 Kg",
         imagen: "/img/proplanperrominipuppy.png",
+        stock: 13,
         precio: 12800,
         categorias: [
             "perros"
@@ -121,6 +135,7 @@ const productos = [
         id: "proplan-perro-mini-adult-3kg",
         nombre: "Pro Plan Adulto Raza Pequeña 3 Kg",
         imagen: "/img/proplanperrominiadult.png",
+        stock: 11,
         precio: 11100,
         categorias: [
             "perros"
@@ -131,6 +146,7 @@ const productos = [
         id: "proplan-perro-medium-puppy-3kg",
         nombre: "Pro Plan Cachorro Raza Mediana 3 Kg",
         imagen: "/img/proplanperromediumpuppy.png",
+        stock: 5,
         precio: 12200,
         categorias: [
             "perros"
@@ -141,6 +157,7 @@ const productos = [
         id: "proplan-perro-medium-adult-3kg",
         nombre: "Pro Plan Adulto Raza Mediana 3 Kg",
         imagen: "/img/proplanperromediumadult.png",
+        stock: 3,
         precio: 11100,
         categorias: [
             "perros"
@@ -151,6 +168,7 @@ const productos = [
         id: "proplan-perro-maxi-puppy-3kg",
         nombre: "Pro Plan Cachorro Raza Grande 3 Kg",
         imagen: "/img/proplanperromaxipuppy.png",
+        stock: 7,
         precio: 12200,
         categorias: [
             "perros"
@@ -161,6 +179,7 @@ const productos = [
         id: "proplan-perro-maxi-adult-3kg",
         nombre: "Pro Plan Adulto Raza Grande 3 Kg",
         imagen: "/img/proplanperromaxiadult.png",
+        stock: 4,
         precio: 11100,
         categorias: [
             "perros"
@@ -171,6 +190,7 @@ const productos = [
         id: "royal-canin-gato-castrado-1-5kg",
         nombre: "Royal Canin Gato Castrado 1,5 Kg",
         imagen: "/img/rcgatocastrado.png",
+        stock: 2,
         precio: 7450,
         categorias: [
             "gatos"
@@ -181,6 +201,7 @@ const productos = [
         id: "royal-canin-gato-ageing-2kg",
         nombre: "Royal Canin Gato Ageing +12 2 Kg",
         imagen: "/img/rcgatoageing.png",
+        stock: 9,
         precio: 12700,
         categorias: [
             "gatos"
@@ -191,6 +212,7 @@ const productos = [
         id: "royal-canin-gato-urinary-1-5kg",
         nombre: "Royal Canin Gato Urinary 1,5 Kg",
         imagen: "/img/rcgatourinary.png",
+        stock: 8,
         precio: 9299,
         categorias: [
             "gatos"
@@ -201,6 +223,7 @@ const productos = [
         id: "royal-canin-gato-renal-2kg",
         nombre: "Royal Canin Gato Renal 2 Kg",
         imagen: "/img/rcgatorenal.png",
+        stock: 7,
         precio: 9550,
         categorias: [
             "gatos"
@@ -211,6 +234,7 @@ const productos = [
         id: "proplan-kitten-3kg",
         nombre: "Pro Plan Kitten 3 Kg",
         imagen: "/img/proplankitten.png",
+        stock: 4,
         precio: 17499,
         categorias: [
             "gatos"
@@ -221,6 +245,7 @@ const productos = [
         id: "proplan-gato-adulto-3kg",
         nombre: "Pro Plan Gato Adulto 3 Kg",
         imagen: "/img/proplangatoadulto.png",
+        stock: 5,
         precio: 15899,
         categorias: [
             "gatos"
@@ -231,6 +256,7 @@ const productos = [
         id: "proplan-gato-castrado-3kg",
         nombre: "Pro Plan Gato Castrado 3 Kg",
         imagen: "/img/proplangatocastrado.png",
+        stock: 3,
         precio: 18299,
         categorias: [
             "gatos"
@@ -241,6 +267,7 @@ const productos = [
         id: "proplan-gato-urinary-3kg",
         nombre: "Pro Plan Gato Urinary 3 Kg",
         imagen: "/img/proplangatourinary.png",
+        stock: 10,
         precio: 18200,
         categorias: [
             "gatos"
@@ -249,10 +276,12 @@ const productos = [
     }
 ]
 
-const obtenerProductos = () => {
-    return new Promise((resolve, reject) => {
-        resolve(productos)
-    });
+const seedProducts = () => {
+    productos.map(({ id, ...rest }) => {
+        const productosRef = collection(db, "productos")
+        addDoc(productosRef, rest)
+    })
+    console.log("productos subidos correctamente")
 }
 
-export default obtenerProductos
+seedProducts()

@@ -1,7 +1,11 @@
-import logo from "../../assets/logo.png"
-import CartWidget from "./CartWidget"
-import "./navbar.css"
 import { Link } from "react-router-dom"
+
+import CartWidget from "./CartWidget"
+
+import logo from "../../assets/logo.png"
+
+import "./navbar.css"
+
 
 
 const NavBar = () => {
@@ -12,13 +16,13 @@ const NavBar = () => {
         <Link to={"/"} className="navbar-brand">
           <img className="logo" src={logo} alt="Logo de Huellitas" />
         </Link>
-        
+
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+
         <div className="collapse navbar-collapse menuNavegacion" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 fs-5 ms-auto p-2 text-center mx-auto">
             <li className="nav-item">
@@ -37,17 +41,11 @@ const NavBar = () => {
                 <li><Link to={"/productos/gatos"} className="dropdown-item">Gatos</Link></li>
               </ul>
             </li>
-            <li className="nav-item">
-              <Link to={"/servicios"} >Servicios</Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/contacto"}>Contacto</Link>
-            </li>
           </ul>
         </div>
-        
-        <CartWidget /> 
-      
+
+        <CartWidget />
+
       </nav>
     </header>
 

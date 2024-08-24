@@ -1,0 +1,157 @@
+h1 {
+  margin-top: 0;
+}
+
+.contenedorCarrito {
+  display: flex;
+  justify-content: center;
+  width: 75vw;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.contenedorCarritoProductos {
+  margin-bottom: 20px;
+}
+
+.titulosCarrito {
+  background-color: #661D58;
+  color: #fafafa;
+}
+
+.contenedorCarritoProductos tr {
+  border: lightgray 1px solid;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+.contenedorCarritoProductos tr td,
+.contenedorCarritoProductos tr th {
+  text-align: center;
+  padding: 10px;
+}
+
+.contenedorCarritoProductos tr td h2,
+.contenedorCarritoProductos tr th h2 {
+  font-size: 1.3rem;
+}
+
+.contenedorCarritoProductos tr td h3,
+.contenedorCarritoProductos tr th h3 {
+  font-size: 1.1rem;
+}
+
+.contenedorCarritoProductos tr td button,
+.contenedorCarritoProductos tr th button {
+  background-color: #661D58;
+  color: #fafafa;
+  padding: 10px;
+  border: #661D58 solid 1px;
+  transition: all 0.3s;
+  width: 2rem;
+  height: 2rem;
+  border: lightgray 1px solid;
+  padding: 1px;
+}
+
+.contenedorCarritoProductos tr td button:hover,
+.contenedorCarritoProductos tr th button:hover {
+  background-color: #9C4A8C;
+  color: #fafafa;
+  border: none;
+}
+
+.contenedorCarritoProductos tr td .btnCarritoX,
+.contenedorCarritoProductos tr th .btnCarritoX {
+  border-radius: 8px;
+}
+
+.contenedorCarritoProductos tr .celdaProducto {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contenedorCarritoProductos tr .celdaProducto .imgCarrito {
+  width: 120px;
+  height: 100px;
+}
+
+.contenedorCarritoProductos tr .celdaProducto h3 {
+  color: #FC6736;
+  font-weight: bold;
+}
+
+.contenedorCarritoProductos tr .celdaCantidad div {
+  display: flex;
+  justify-content: center;
+}
+
+.contenedorCarritoProductos tr .celdaCantidad div h3 {
+  background-color: white;
+  border: lightgray 1px solid;
+  padding: 5px 15px;
+  height: 2rem;
+}
+
+.contenedorCarritoProductos tr .celdaCantidad div .btnCarritoIzq {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.contenedorCarritoProductos tr .celdaCantidad div .btnCarritoDer {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.contenedorCarritoProductos .celdaTotal {
+  background-color: lightgray;
+}
+
+.contenedorCarrito .contenedorCarritoProductos .celdaTotal h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.contenedorBtnVaciarYFinalizar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.contenedorBtnVaciarYFinalizar button {
+  background-color: #661D58;
+  color: #fafafa;
+  padding: 10px;
+  border: #661D58 solid 1px;
+  transition: all 0.3s;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+.contenedorBtnVaciarYFinalizar button:hover {
+  background-color: #9C4A8C;
+  color: #fafafa;
+}
+
+
+.carritoVacio h2 {
+  margin-top: 100px;
+  margin-left: 200px;
+  font-size: 1.8rem;
+}
+
+.carritoVacio a button {
+  background-color: #661D58;
+  color: #fafafa;
+  padding: 10px;
+  border: none;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  border-radius: 8px;
+  margin-left: 200px;
+  margin-bottom: 200px;
+  margin-top: 30px;
+}

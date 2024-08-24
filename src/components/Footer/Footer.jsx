@@ -1,6 +1,8 @@
-import "./footer.css"
+import { Link } from "react-router-dom"
+
 import imagesFooter from "../../assets/footer/imgFooter.js"
-import {Link} from "react-router-dom"
+
+import "./footer.css"
 
 const Footer = () => {
     return (

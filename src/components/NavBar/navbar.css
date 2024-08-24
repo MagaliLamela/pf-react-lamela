@@ -1,76 +1,76 @@
 .barraNavegacion {
-    background-color: #661D58;
-  }
-  
+  background-color: #661D58;
+}
+
 .logo {
-    width: 10vh;
-    cursor: pointer;
-    margin-left: 7vw;
-  }
-  
-  .menuNavegacion ul li {
-    list-style: none;
-    display: block;
-    margin: 0px 3vw;
-  }
- 
- .menuNavegacion ul li a {
-    text-decoration: none;
-    color: #fafafa;
-    font-weight: bold;
-    font-size: 1.8rem;
-  }
-  
+  width: 10vh;
+  cursor: pointer;
+  margin-left: 7vw;
+}
+
+.menuNavegacion ul li {
+  list-style: none;
+  display: block;
+  margin: 0px 3vw;
+}
+
+.menuNavegacion ul li a {
+  text-decoration: none;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
 .menuNavegacion ul li .dropdown-item {
-    font-size: 1.4rem;
-    color: #661D58;
-    font-weight: bolder;
-    margin: 5px;
-  }
-  
-  .menuNavegacion .dropdown-menu {
-    background-color: #fafafa;
-    border: none;
-  }
-  
- .menuNavegacion ul li .dropdown-divider {
-    border-color: #9C4A8C;
-    border: 1px solid #9C4A8C;
-    border-radius: 2px;
-  }
-  
-  .navbar-toggler {
-    color: #fafafa;
-  }
-  
-  .navbar-toggler-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .contenedorIconoCarrito {
-    margin-right: 7vw;
-    display: flex
-  }
-  
-  .carrito {
-    cursor: pointer;
-    color: #fafafa;
-  }
-  
-  .numeroCantidad {
-    position: absolute;
-    background-color: #9C4A8C;
-    color: #fafafa;
-    padding: 0.1rem 0.4rem;
-    border-radius: 0.25rem;
-    margin-right: 15px;
-    font-size: 0.8rem;
-    transform: translate(28px, 1px);
-  }
-  
-  /* RESPONSIVE */
-  /*HEADER*/
+  font-size: 1.4rem;
+  color: #661D58;
+  font-weight: bolder;
+  margin: 5px;
+}
+
+.menuNavegacion .dropdown-menu {
+  background-color: #fafafa;
+  border: none;
+}
+
+.menuNavegacion ul li .dropdown-divider {
+  border-color: #9C4A8C;
+  border: 1px solid #9C4A8C;
+  border-radius: 2px;
+}
+
+.navbar-toggler {
+  color: #fafafa;
+}
+
+.navbar-toggler-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.contenedorIconoCarrito {
+  margin-right: 7vw;
+  display: flex
+}
+
+.carrito {
+  cursor: pointer;
+  color: #fafafa;
+}
+
+.numeroCantidad {
+  position: absolute;
+  background-color: #9C4A8C;
+  color: #fafafa;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+  margin-right: 15px;
+  font-size: 0.8rem;
+  transform: translate(28px, 1px);
+}
+
+/* RESPONSIVE */
+/*HEADER*/
 
 @media (min-width: 992px) {
   .nav-item {
@@ -80,6 +80,7 @@
     text-underline-offset: 10px;
     transition: all 0.3s;
   }
+
   .nav-item:hover {
     text-decoration: underline;
     text-decoration-color: #fafafa;
@@ -92,12 +93,15 @@
   .menuNavegacion ul li .dropdown-menu {
     background-color: #661D58;
   }
+
   .menuNavegacion ul li .dropdown-item {
     color: #fafafa;
   }
+
   .dropdown-divider {
     display: none;
   }
+
   .logo {
     width: 8.5vh;
   }

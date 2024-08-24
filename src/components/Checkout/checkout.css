@@ -1,0 +1,53 @@
+.contenedorFormularioCarrito form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorFormularioCarrito input {
+  width: 40%;
+}
+
+.contenedorFormularioCarrito input {
+  height: 3.1rem;
+  padding: 10px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
+.contenedorFormularioCarrito input:focus {
+  outline: #661D58 solid 3px;
+}
+
+.contenedorFormularioCarrito .btnFormCarrito {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.contenedorFormularioCarrito .btnFormCarrito .botonFormulario {
+  background-color: #661D58;
+  color: #fafafa;
+  padding: 10px;
+  border: #661D58 solid 1px;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  border-radius: 15px;
+  width: 220px;
+  height: 55px;
+}
+
+.contenedorFormularioCarrito .btnFormCarrito .botonFormulario:hover {
+  background-color: #9C4A8C;
+  color: #fafafa;
+  border: none;
+}
+
+.contenedorFormularioCarrito .btnFormCarrito .botonFormulario:active {
+  border: #661D58 1px solid;
+  font-size: 1.3rem;
+}
