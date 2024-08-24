@@ -34,4 +34,4 @@ Puedes encontrar las dependencias exactas en el archivo `package.json` del proye
 Si tienes alguna pregunta o necesitas más información, no dudes en contactarme:
 
 - Email: magalilamelamitsumori@gmail.com
-- Linkedin: <a href=“https://www.linkedin.com/in/magali-lamela-mitsumori/”> Linkedin </a> 
+- Linkedin: <a href="https://www.linkedin.com/in/magali-lamela-mitsumori/"> Linkedin </a> 
